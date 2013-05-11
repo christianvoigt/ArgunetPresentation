@@ -29,25 +29,25 @@ Within each section, you can animate your presentation. Each slide can contain t
 
 
  
-###Add an Element
+###Add an element
 
 
     <element class="add" data-step="stepNr"> </element>
 
 Add an Element to the slide at stepNr. These elements will be hidden at the beginning and displayed when their step comes.
 
-###Remove an Element
+###Remove an element
 
     <element class="remove" data-step="stepNr"> </element>
 Removes an Element from the slide at stepNr. These elements will be shown at the beginning and hidden when their step comes.
 
-###Substitute an Element
+###Substitute an element
 
     <element class="substitute" data-step="stepNr" data-target="id"> </element>
 
 Substitutes this Element for the Element with the id at stepNr. This is especially useful for rephrasing and adapting premises step by step.
 
-###Highlight an Element
+###Highlight an element
 
     <element class="highlight" data-step="stepNr"> </element>
  
