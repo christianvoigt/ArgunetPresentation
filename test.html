@@ -1,0 +1,38 @@
+<html><head><title>Test</title>
+<style>
+.test{
+position:absolute;
+margin-bottom:-100%;
+background-color:red;
+height:100%;
+width:100%;
+overflow:hidden;
+border:1px solid black;
+
+    -webkit-transition: all .8s ease-in-out;
+    -moz-transition: all .8s ease-in-out;
+    -o-transition: all .8s ease-in-out;
+    transition: all .8s ease-in-out;
+}
+.test:target{
+	margin-bottom:0%;
+}
+#container{
+position:relative;
+height:100%;
+overflow:hidden;
+background-color:#999;
+}
+#slide-1{
+background-color:green;
+}
+</style>
+
+</head><body>
+<a href="#slide-1">slide 1</a>
+<a href="#slide-2">slide 2</a>
+<div id="container">
+<p class="test" id="slide-1">Dies ist der Inhalt</p>
+<p class="test" id="slide-2">Ein anderer Slide. Dies ist der zweite Inhalt</p>
+</div>
+</body></html>

@@ -1,0 +1,13 @@
+.argument{
+	
+}
+.conclusion{
+	font-weight:bold;
+	border-top:1px solid black;
+	margin-top:0.5em;
+	padding-top:0.5em;
+	margin-bottom:0.5em;
+}
+.premise{
+	
+}

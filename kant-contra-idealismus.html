@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Argunet -- Behind The Scenes</title>
+<link rel="stylesheet" href="src/css/ArgunetPresentation.css" type="text/css" />
+
+<link href='http://fonts.googleapis.com/css?family=Vollkorn:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+<div id="presentation">
+<section class="title">
+<h2>Kants Argument gegen den "Idealismus"</h2>
+<h3>Ein Rekonstruktionsvorschlag</h3>
+</section>
+
+<section class="source">
+<h2>Kant - Kritik der reinen Vernunft</h2>
+
+<h3>Lehrsatz</h3>
+<p class="highlight" data-step="1">
+Das blosse, aber empirisch bestimmte, Bewusstsein meines eigenen
+Daseins beweist das Dasein der Gegenstaende im Raum ausser mir.
+<div class="comment" data-step="1">
+Die Konklusion ist in diesem Fall leicht zu erkennen: Kant selbst sagt ausdrücklich, was sein Beweisziel ist.
+</div>
+</p>
+<h3>Beweis</h3>
+<p>Ich bin mir meines Daseins als in der Zeit bestimmt bewusst. Alle
+Zeitbestimmung setzt etwas Beharrliches in der Wahrnehmung voraus.
+Dieses Beharrliche aber kann nicht etwas in mir sein, weil eben mein
+Dasein in der Zeit durch dieses Beharrliche allererst bestimmt werden
+kann 1). Also ist die Wahrnehmung dieses Beharrlichen nur durch ein
+Ding ausser mir und nicht durch die blosse Vorstellung eines Dinges
+ausser mir moeglich. Folglich ist die Bestimmung meines Daseins in
+der Zeit nur durch die Existenz wirklicher Dinge, die ich ausser mir
+wahrnehme, moeglich. Nun ist das Bewusstsein in der Zeit mit dem
+Bewusstsein der Moeglichkeit dieser Zeitbestimmung notwendig
+verbunden: Also ist es auch mit der Existenz der Dinge ausser mir,
+als Bedingung der Zeitbestimmung, notwendig verbunden; d.i. das
+Bewusstsein meines eigenen Daseins ist zugleich ein unmittelbares
+Bewusstsein des Daseins anderer Dinge ausser mir.
+</p>
+<p>Fussnote 1. Der Satz ist nach Kants Vorrede zu dieser zweiten Ausgabe
+ folgendermassen umzuaendern: "Dieses Beharrliche aber kann nicht
+ eine Anschauung in mir sein. Denn alle Bestimmungsgruende meines
+ Daseins, die in mir angetroffen werden koennen, sind Vorstellungen,
+ und beduerfen als solche, selbst ein von ihnen unterschiedenes
+ Beharrliches, worauf in Beziehung der Wechsel derselben, mithin
+ mein Dasein in der Zeit, darin sie wechseln, bestimmt werden
+ koennen".
+</p>	
+</section>
+
+<section>
+<ol class="argument">
+<li>???</li>
+<li class="conclusion" id="conclusion-1">
+<span class="highlight" data-step="2">Das blosse, aber empirisch bestimmte, Bewusstsein meines eigenen
+Daseins beweist</span> das Dasein der Gegenstaende im Raum ausser mir.
+</li>
+<li class="conclusion substitute" data-step="4" data-target="conclusion-1" id="conclusion-2">Es gibt Gegenstände im Raum ausser mir.</li>
+<li class="premise add" data-step="7">Wenn es Gegenstände im Raum ausser mir gibt, dann gibt es eine Außenwelt.</li>
+<li class="conclusion add" data-step="6" >Es gibt eine Außenwelt.</li>
+</ol>
+<div class="comment" data-step="1">
+Dieses "Beweisziel" enthält aber bereits eine Kurzbeschreibung des Beweises selbst. Das erkennen wir an dem Signalwort "beweist" in dieser These.
+<p class="add" data-step="3">Diesen Teil können wir deswegen löschen.</p>
+<p class="add" data-step="5">Genaugenommen will Kant ja aber die Existenz der Außenwelt beweisen. Darauf zu schließen ist ja aber nun trivial.</p>
+</div>
+</section>
+
+<section class="source">
+<div id="source-1">
+<h2>Kant - Kritik der reinen Vernunft</h2>
+
+<h3>Lehrsatz</h3>
+<p>
+Das blosse, aber empirisch bestimmte, Bewusstsein meines eigenen
+Daseins beweist das Dasein der Gegenstaende im Raum ausser mir.
+</p>
+<h3>Beweis</h3>
+<p  class="highlight" data-step="2" id="beweis-1">Ich bin mir meines Daseins als in der Zeit bestimmt bewusst. Alle
+Zeitbestimmung setzt etwas Beharrliches in der Wahrnehmung voraus.
+Dieses Beharrliche aber kann nicht etwas in mir sein, weil eben mein
+Dasein in der Zeit durch dieses Beharrliche allererst bestimmt werden
+kann 1). Also ist die Wahrnehmung dieses Beharrlichen nur durch ein
+Ding ausser mir und nicht durch die blosse Vorstellung eines Dinges
+ausser mir moeglich. Folglich ist die Bestimmung meines Daseins in
+der Zeit nur durch die Existenz wirklicher Dinge, die ich ausser mir
+wahrnehme, moeglich. Nun ist das Bewusstsein in der Zeit mit dem
+Bewusstsein der Moeglichkeit dieser Zeitbestimmung notwendig
+verbunden: Also ist es auch mit der Existenz der Dinge ausser mir,
+als Bedingung der Zeitbestimmung, notwendig verbunden; d.i. das
+Bewusstsein meines eigenen Daseins ist zugleich ein unmittelbares
+Bewusstsein des Daseins anderer Dinge ausser mir.
+</p>
+<p  class="substitute" data-step="3" data-target="beweis-1">Ich bin mir meines Daseins als in der Zeit bestimmt bewusst. Alle
+Zeitbestimmung setzt etwas Beharrliches in der Wahrnehmung voraus.
+Dieses Beharrliche aber kann nicht etwas in mir sein, weil eben mein
+Dasein in der Zeit durch dieses Beharrliche allererst bestimmt werden
+kann 1). <span class="highlight" data-step="4">Also ist die Wahrnehmung dieses Beharrlichen nur durch ein
+Ding ausser mir und nicht durch die blosse Vorstellung eines Dinges
+ausser mir moeglich. </span>Folglich ist die Bestimmung meines Daseins in
+der Zeit nur durch die Existenz wirklicher Dinge, die ich ausser mir
+wahrnehme, moeglich. Nun ist das Bewusstsein in der Zeit mit dem
+Bewusstsein der Moeglichkeit dieser Zeitbestimmung notwendig
+verbunden: Also ist es auch mit der Existenz der Dinge ausser mir,
+als Bedingung der Zeitbestimmung, notwendig verbunden; d.i. das
+Bewusstsein meines eigenen Daseins ist zugleich ein unmittelbares
+Bewusstsein des Daseins anderer Dinge ausser mir.
+</p>
+<p>Fussnote 1. Der Satz ist nach Kants Vorrede zu dieser zweiten Ausgabe
+ folgendermassen umzuaendern: "Dieses Beharrliche aber kann nicht
+ eine Anschauung in mir sein. Denn alle Bestimmungsgruende meines
+ Daseins, die in mir angetroffen werden koennen, sind Vorstellungen,
+ und beduerfen als solche, selbst ein von ihnen unterschiedenes
+ Beharrliches, worauf in Beziehung der Wechsel derselben, mithin
+ mein Dasein in der Zeit, darin sie wechseln, bestimmt werden
+ koennen".
+</p>	
+</div>
+<div class="source substitute" data-step="8" data-target="source-1">
+Ich bin mir meines Daseins als in der Zeit bestimmt bewusst. Alle
+Zeitbestimmung setzt etwas Beharrliches in der Wahrnehmung voraus.
+Dieses Beharrliche aber kann nicht etwas in mir sein, weil eben mein
+Dasein in der Zeit durch dieses Beharrliche allererst bestimmt werden
+kann 1).
+</div>
+<div class="comment" data-step="1">
+Zurück zur Quelle. Schauen wir uns nun den Beweis an. 
+</div>
+<div class="comment" data-step="5">
+Auch hier entdecken wir ein Signalwort, nämlich "Also". Es signalisiert uns, dass hier bereits eine erste Schlussfolgerung gezogen wird. 
+<p class="step add" data-step="6">Widmen wir uns erst einmal diesem ersten Abschnitt des Arguments. Wir können die Sätze bis zum "Also" einfach jeweils als Prämissen ins Argument einfügen und den "Also"-Satz als Konklusion übernehmen.</p> 
+</div>
+</section>
+<section  class="argument">
+<ol>
+<li>Ich bin mir meines Daseins als in der Zeit bestimmt bewusst.</li>
+<li>Alle Zeitbestimmung setzt etwas Beharrliches in der Wahrnehmung voraus.</li>
+<li>Dieses Beharrliche aber kann nicht etwas in mir sein, weil eben mein
+Dasein in der Zeit durch dieses Beharrliche allererst bestimmt werden
+kann.</li>
+<li class="conclusion">Also ist die Wahrnehmung dieses Beharrlichen nur durch ein
+Ding ausser mir und nicht durch die blosse Vorstellung eines Dinges
+ausser mir moeglich. </li>
+<li>???</li>
+<li class="conclusion">Es gibt Gegenstände im Raum ausser mir.</li>
+<li>Wenn es Gegenstände im Raum ausser mir gibt, dann gibt es eine Außenwelt.</li>
+<li class="conclusion">Es gibt eine Außenwelt.</li>
+</ol>
+</section>
+<section>
+<ol class="argument">
+<li>Ich bin mir meines Daseins als in der Zeit bestimmt bewusst.</li>
+<li>Alle Zeitbestimmung setzt etwas Beharrliches in der Wahrnehmung voraus.</li>
+<li id="p-3">Dieses Beharrliche aber kann nicht etwas in mir sein, weil eben mein
+Dasein in der Zeit durch dieses Beharrliche allererst bestimmt werden
+kann.</li>
+<li class="substitute" data-step="2" data-target="p-3" id="p-3-2">Dieses Beharrliche aber kann nicht
+ eine Anschauung in mir sein. <span class="highlight" data-step="4">Denn alle Bestimmungsgruende meines
+ Daseins, die in mir angetroffen werden koennen, sind Vorstellungen,
+ und beduerfen als solche, selbst ein von ihnen unterschiedenes
+ Beharrliches, worauf in Beziehung der Wechsel derselben, mithin
+ mein Dasein in der Zeit, darin sie wechseln, bestimmt werden
+ koennen.</span></li>
+ <li class="substitute" data-step="5" data-target="p-3-2">Dieses Beharrliche aber kann nicht
+ eine Anschauung in mir sein.</li>
+<li class="conclusion">Also ist die Wahrnehmung dieses Beharrlichen nur durch ein
+Ding ausser mir und nicht durch die blosse Vorstellung eines Dinges
+ausser mir moeglich. </li>
+</ol>
+<div class="comment" data-step="1">In der Fussnote findet sich eine ausführlichere Formulierung für Prämisse 3. Wir können auch diese einsetzen.</div>
+<div class="comment" data-step="3">Aber in beiden Varianten wird hier bereits wieder ein Argument für die Prämisse geliefert. Diesmal erkennen wir das am "Denn". Diesen Teil sollten wir aus der Prämisse löschen und später als unterstützendes Argument für diese Prämisse rekonstruieren.</div>
+</section>
+
+<section>
+<ol class="argument">
+<li id="p-1">Ich bin mir meines Daseins als in der Zeit bestimmt bewusst.</li>
+<li class="substitute" data-target="p-1" data-step="5">Ich bestimme mich selbst als etwas, das während einer bestimmten Zeit existiert.</li>
+<li>Alle Zeitbestimmung setzt etwas Beharrliches in der Wahrnehmung voraus.</li>
+<li class="conclusion add" data-step="3">Also: Ich setze etwas Beharrliches in der Wahrnehmung voraus.</li>
+<li>Dieses Beharrliche aber kann nicht eine Anschauung in mir sein.</li>
+<li class="add" data-step="8">Was in meiner Wahrnehmung existiert, aber keine Anschauung in mir sein kann, muss eine Wahrnehmung von etwas ausser mir sein.</li>
+<li class="add conclusion" data-step="7">Also: Ich setze in meiner Wahrnehmung etwas außerhalb von mir Existierendes voraus.</li>
+<li class="conclusion">Also ist die Wahrnehmung dieses Beharrlichen nur durch ein
+Ding ausser mir und nicht durch die blosse Vorstellung eines Dinges
+ausser mir moeglich. </li>
+</ol>
+<div class="comment" data-step="1">In Prämisse 1 ist von Zeitbestimmung und Bewußtsein die Rede. In der Konklusion geht es um Wahrnehmung. Prämisse 2 stellt den Zusammenhang zwischen Zeitbestimmung und Wahrnehmung her.</div>
+<div class="comment" data-step="2">Offensichtlich soll aus 1 und 2 folgen, dass wir etwas Beharrliches in der Wahrnehmung voraussetzen müssen. Diese Zwischenkonklusion können wir nun einfügen.</div>
+<div class="comment" data-step="4">Damit die logische Struktur klar hervortritt, sollten wir zudem Prämisse 1 so umformulieren, dass sie einen Spezialfall bildet, auf den sich die generelle Behauptung aus Prämisse 2 anwenden lässt.</div>
+<div class="comment" data-step="6">Mit Prämisse 4 will Kant begründen, warum das Beharrliche außerhalb von uns sein muss. Auch hier können wir erst einmal diese Zwischenkonklusion einfügen. Um den Schluss gültig zu machen können wir die Prämisse einfügen, dass alle Wahrnehmungen, die nicht von etwas Innerlichem sind, von etwas Äußerem sein müssen.</div>
+</section>
+
+<section>
+<ol class="argument">
+<li>Ich bestimme mich selbst als etwas, das während einer bestimmten Zeit existiert.</li>
+<li>Alle Zeitbestimmung setzt etwas Beharrliches in der Wahrnehmung voraus.</li>
+<li class="conclusion">Also: Ich setze etwas Beharrliches in der Wahrnehmung voraus.</li>
+<li>Dieses Beharrliche aber kann nicht eine Anschauung in mir sein.</li>
+<li>Was ich in meiner Wahrnehmung voraussetze, aber keine Anschauung in mir sein kann, muss eine Wahrnehmung von etwas ausser mir sein.</li>
+<li class="conclusion">Also: Ich setze in meiner Wahrnehmung etwas außerhalb von mir Existierendes voraus.</li>
+<li>???</li>
+<li class="conclusion">Also ist die Wahrnehmung dieses Beharrlichen nur durch ein
+Ding ausser mir und nicht durch die blosse Vorstellung eines Dinges
+ausser mir moeglich. </li>
+</ol>
+<div class="comment" data-step="1">Nun haben wir alle expliziten Prämissen Kants berücksichtigt und wir haben sie so präzisiert und ergänzt, dass sich gültige Schlüsse ergeben. Aber wir sind nicht bei der Konklusion angelangt, die Kant gerne erreichen wollte.</div>
+<div class="comment" data-step="2">Außerdem haben wir nur ein Argument gewonnen, dass den Zusammenhang zwischen Zeitbestimmung und Wahrnehmung einer Außenwelt herstellt. Aber könnten wir nicht theoretisch darauf verzichten, uns zeitlich zu bestimmen? </div>
+
+</section>
+
+<section class="source">
+<h2>Kant - Kritik der reinen Vernunft</h2>
+
+
+<h3>Beweis</h3>
+<p>Ich bin mir meines Daseins als in der Zeit bestimmt bewusst. Alle
+Zeitbestimmung setzt etwas Beharrliches in der Wahrnehmung voraus.
+Dieses Beharrliche aber kann nicht etwas in mir sein, weil eben mein
+Dasein in der Zeit durch dieses Beharrliche allererst bestimmt werden
+kann 1). Also ist die Wahrnehmung dieses Beharrlichen nur durch ein
+Ding ausser mir und nicht durch die blosse Vorstellung eines Dinges
+ausser mir moeglich. Folglich ist die Bestimmung meines Daseins in
+der Zeit nur durch die Existenz wirklicher Dinge, die ich ausser mir
+wahrnehme, moeglich. <span class="highlight" data-step="2">Nun ist das Bewusstsein in der Zeit mit dem
+Bewusstsein der Moeglichkeit dieser Zeitbestimmung notwendig
+verbunden: Also ist es auch mit der Existenz der Dinge ausser mir,
+als Bedingung der Zeitbestimmung, notwendig verbunden; d.i. das
+Bewusstsein meines eigenen Daseins ist zugleich ein unmittelbares
+Bewusstsein des Daseins anderer Dinge ausser mir.</span>
+</p>
+
+
+<div class="comment" data-step="1">
+Hilft uns der Teil des Beweises, den wir bisher unberücksichtigt gelassen haben?
+</div>
+<p class="comment" data-step="3">Er hilft uns nur für unser zweites Problem: In diesem Teil behauptet Kant, dass "das Bewusstsein in der Zeit" notwendig die "Möglichkeit der Zeitbestimmung" voraussetze. Wir können also als bewußte Wesen nicht einfach auf die Zeitbestimmung verzichten und also auch nicht auf die Wahrnehmung einer Außenwelt.</p>
+</section>
+
+<section class="argument">
+<ol>
+<li>Ich bestimme mich selbst als etwas, das während einer bestimmten Zeit existiert.</li>
+<li>Alle Zeitbestimmung setzt etwas Beharrliches in der Wahrnehmung voraus.</li>
+<li class="conclusion">Also: Ich setze etwas Beharrliches in der Wahrnehmung voraus.</li>
+<li>Dieses Beharrliche aber kann nicht eine Anschauung in mir sein.</li>
+<li>Was ich in meiner Wahrnehmung voraussetze, aber keine Anschauung in mir sein kann, muss eine Wahrnehmung von etwas ausser mir sein.</li>
+<li class="conclusion">Also: Ich setze in meiner Wahrnehmung etwas außerhalb von mir Existierendes voraus.</li>
+<li class="add" data-step="2">Wenn ich ein Wesen mit Bewußtsein bin, dann setze ich notwendigerweise die Möglichkeit voraus mich selbst zeitlich zu bestimmen.</li>
+<li  class="add" data-step="3">Ich habe Bewußtsein.</li>
+<li class="add conclusion" data-step="4">Ich setze notwendigerweise in meiner Wahrnehmung voraus, dass etwas Beharrliches außerhalb von mir existiert.</li>
+<li>???</li>
+<li class="conclusion">Also ist die Wahrnehmung dieses Beharrlichen nur durch ein
+Ding ausser mir und nicht durch die blosse Vorstellung eines Dinges
+ausser mir moeglich. </li>
+</ol>
+<div class="comment" data-step="1">Diesen Gedanken können wir nun einfügen und damit auf eine weitere Zwischenkonklusion schließen.</div>
+<div class="comment" data-step="5">Nun ist auch klar geworden, warum Kant schon in der ersten Prämisse von "Bewußtsein" sprach. Die erste Prämisse in ihrer jetzigen Form wird damit überflüssig. Wir brauchen nicht erst anzunehmen, dass ich mich zeitlich bestimme. Wir brauchen nur anzunehmen, dass ich ein bewußtes Wesen bin, dann folgt der Rest schon von allein.</div>
+
+</section>
+
+<section  class="argument">
+<ol>
+<li>Alle Zeitbestimmung setzt etwas Beharrliches in der Wahrnehmung voraus.</li>
+<li class="conclusion">Also: Auch wenn ich mich selbst zeitlich bestimme, setze ich etwas Beharrliches in der Wahrnehmung voraus.</li>
+<li>Dieses Beharrliche aber kann nicht eine Anschauung in mir sein.</li>
+<li>Was ich in meiner Wahrnehmung voraussetze, aber keine Anschauung in mir sein kann, muss eine Wahrnehmung von etwas ausser mir sein.</li>
+<li class="conclusion">Also: Wenn ich mich selbst zeitlich bestimme, setze ich in meiner Wahrnehmung etwas außerhalb von mir Existierendes voraus.</li>
+<li>Wenn ich ein Wesen mit Bewußtsein bin, dann setze ich notwendigerweise die Möglichkeit voraus mich selbst zeitlich zu bestimmen.</li>
+<li>Ich habe Bewußtsein.</li>
+<li class="conclusion">Ich setze notwendigerweise in meiner Wahrnehmung voraus, dass etwas Beharrliches außerhalb von mir existiert.</li>
+<li>???</li>
+<li class="conclusion">Also ist die Wahrnehmung dieses Beharrlichen nur durch ein
+Ding ausser mir und nicht durch die blosse Vorstellung eines Dinges
+ausser mir moeglich. </li>
+<li class="add" data-step="3">???</li>
+<li class="conclusion add" data-step="4">Es gibt Gegenstände im Raum ausser mir.</li>
+<li class="add" data-step="5">Wenn es Gegenstände im Raum ausser mir gibt, dann gibt es eine Außenwelt.</li>
+<li class="conclusion add" data-step="6">Es gibt eine Außenwelt.</li>
+</ol>
+<div class="comment" data-step="1">Ignorieren wir einmal, dass Kant nur von der Möglichkeit der Zeitbestimmung spricht. Dadurch ist der Schluss bisher genaugenommen nicht gültig. </div><div class="step comment add" data-step="2">Noch viel wesentlicher ist aber, dass die Zwischenkonklusion, selbst wenn wir sie denn erlangen, immer noch eine ganz andere ist, als die Hauptkonklusion, die Kant eigentlich "beweisen" will.</div>
+
+</section>
+
+<section>
+<ol class="argument">
+<li class="premise">Wenn ich mich selbst zeitlich bestimme, setze ich in meiner Wahrnehmung etwas außerhalb von mir Existierendes voraus.</li>
+<li>Wenn ich ein Wesen mit Bewußtsein bin, dann setze ich notwendigerweise die Möglichkeit voraus mich selbst zeitlich zu bestimmen.</li>
+<li>Ich habe Bewußtsein.</li>
+<li class="conclusion">Ich setze notwendigerweise in meiner Wahrnehmung voraus, dass etwas Beharrliches außerhalb von mir existiert.</li>
+<li>???</li>
+<li class="conclusion">Also ist die Wahrnehmung dieses Beharrlichen nur durch ein
+Ding ausser mir und nicht durch die blosse Vorstellung eines Dinges
+ausser mir moeglich. </li>
+<li>???</li>
+<li class="conclusion">Es gibt Gegenstände im Raum ausser mir.</li>
+<li>Wenn es Gegenstände im Raum ausser mir gibt, dann gibt es eine Außenwelt.</li>
+<li class="conclusion">Es gibt eine Außenwelt.</li>
+</ol>
+</section>
+
+</div>
+<script src="src/lib/jquery-1.9.1.js" type="text/javascript"></script>
+<script src="src/lib/jquery.transit.min.js" type="text/javascript"></script>
+<script src="src/ArgunetPresentation.js" type="text/javascript"></script>	
+<script type="text/javascript">
+$(function(){
+	new argunet.ArgunetPresentation($("#presentation"));	
+});
+</script>
+
+
+	
+
+
+
+</body>
+</html>
