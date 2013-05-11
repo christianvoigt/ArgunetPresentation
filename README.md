@@ -15,7 +15,15 @@ Argunet Browser is released under the MIT license. http://en.wikipedia.org/wiki/
 2. How to create a presentation
 -------------------------------
 
-Just start from index.html and delete everything within "<div id='presentation'></div>". Then start by adding "<section></section>" elements.
+Just start from index.html and delete everything within 
+
+    <div id='presentation'></div>. 
+    
+Then start by adding 
+
+    <section></section>
+    
+elements.
 
 ArgunetPresentation uses section elements as slides. You can use h1, h2 and h3 to give your section titles. You can define the first slide as a title slide if you add the class "title" to it.
 
