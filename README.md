@@ -63,9 +63,10 @@ Adds a comment at stepNr. Comments are displayed beside the slide. This is usefu
 
 By default, only one comment at a time will be displayed. But you can use all other animation step types within a comment. That makes it possible to expand a comment with .add elements step by step (or substituting parts of it).
 
-##3. Adding arguments to your presentation
+###Adding arguments, theses and quotes to your presentation
 
 ```
+
 <ol class="argument">
 <li>This is a premise</li>
 <li class="conclusion">This is a conclusion</li>
@@ -73,8 +74,14 @@ By default, only one comment at a time will be displayed. But you can use all ot
 <li class="conclusion"><span class="inference">Inference Rule, Sentences used: 2&3</span>This is a conclusion with an inference rule.</li>
 </ol>
 
+<div class='thesis'><h4>Title</h4>This is a claim.</div>
+
+<blockquote><p>This is a source text.</p><p class="source">Christian Voigt, Readme for Argunet Presentation, 2013</p></blockquote>
+
+
 ```
-You can add the animation step types described above to every element within an argument. So you could start out with just one premise and one conclusion and fill in the other premises and conclusions step by step. You can even change some text within a premise by using:
+
+As with every kind of element, you can add the animation step types described above to every part of an argument. So you could start out with just one premise and one conclusion and fill in the other premises and conclusions step by step. You can even change some text within a premise by using:
 
     <li> A premise: <span id='first-version'>All truths</span> are subjective. <span class="substitute" data-step='1' data-target='first-version'>Some truths</span></li>
 
