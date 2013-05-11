@@ -7,12 +7,10 @@ A Demo can be found here: http://christianvoigt.github.io/ArgunetPresentation/
 
 Visit http://www.argunet.org for more information about argument mapping software and argument reconstruction.
 
-1. License
-----------
-
 Argunet Browser is released under the MIT license. http://en.wikipedia.org/wiki/MIT_License
 
-2. How to create a presentation
+
+1. How to create a presentation
 -------------------------------
 
 Just start from index.html and delete everything within 
@@ -87,7 +85,7 @@ As with every kind of element, you can add the animation step types described ab
 
 
 
-##4. How to create a print version of your presentation
+##2. How to create a print version of your presentation
 
 Argunet Presentation has a print mode that allows you to print out your presentation or to create a PDF file of it. By default Argunet Presentation's print mode does not display animation steps as single slides to keep the page number small. But you can manually customize the print display by adding special css classes for print to your elements. This makes the print mode very flexible and makes it easy to transform your presentation into a concise and nice-looking handout.
 
