@@ -2,6 +2,63 @@
 this.argunet = this.argunet||{};
 
 argunet.StepController = function(){
+	this.stepHandler = {};
+	
+	this.addStepHandler = function(handler){
+		this.stepHandler[handler.id] = handler;
+	}
+	this.removeStepHandler = function(id){
+		delete this.stepHandler[id];
+	}
+	//default handlers
+	this.addStepHandler({
+		id : "add",
+		activate : function(el){
+			$(el).show();
+		},
+		deactivate : function(el){
+			$(el).hide();
+		}
+	});
+	this.addStepHandler({
+		id : "remove",
+		activate : function(el){
+			$(el).hide();
+		},
+		deactivate : function(el){
+			$(el).show();
+		}
+	});
+	this.addStepHandler({
+		id : "highlight",
+		activate : function(el){
+			$(el).addClass("active");
+		},
+		deactivate : function(el){
+			$(el).removeClass("active");
+		}		
+	});
+	this.addStepHandler({
+		id : "substitute",
+		activate : function(el){
+			$("#"+$(el).data("target")).hide();
+			$(el).show();
+		},
+		deactivate : function(el){
+			$("#"+$(el).data("target")).show();
+			$(el).hide();
+		}		
+	});
+	this.addStepHandler({
+		id : "comment",
+		activate : function(el){
+			$(el).show();
+		},
+		deactivate : function(el){
+			$(el).hide();
+		}		
+	});	
+	
 	//get steps for slide
 	this.getSteps = function(slide, cloneComments){
 		var stepMembers = $(slide).find("[data-step]");
@@ -34,37 +91,24 @@ argunet.StepController = function(){
 		var s = steps[stepNr-1];
 		var that = this;
 		$(s).each(function(){
-			if($(this).is(".add")){
-				$(this).show();
-			}else if($(this).is(".remove")){
-				$(this).hide();
-			}else if ($(this).is(".highlight")){
-				$(this).addClass("active");
-			}else if ($(this).is(".substitute")){
-				var target = $("#"+$(this).data("target")).hide();
-				$(this).show();
-			}else if ($(this).is(".comment")){
-				$(".comments .comment:visible").hide();
-				//$(this).closest("section").find(".comment").hide();
-				$(this).show();
-			}			
+			var stepElement = this;
+			$.each(that.stepHandler,function(key,handler){
+				if($(stepElement).is("."+key)){
+					handler.activate(stepElement);
+				}
+			});		
 		});
 	}
 	this.deactivateStep = function(steps, stepNr){
 		var s = steps[stepNr-1];
+		var that = this;
 		$(s).each(function(){
-			if($(this).is(".add")){
-				$(this).hide();
-			}else if($(this).is(".remove")){
-				$(this).show();
-			}else if ($(this).is(".highlight")){
-				$(this).removeClass("active");
-			}else if ($(this).is(".substitute")){
-				var target = $("#"+$(this).data("target")).show();
-				$(this).hide();
-			}else if ($(this).is(".comment")){
-				$(this).hide();
-			}			
+			var stepElement = this;
+			$.each(that.stepHandler,function(key,handler){
+				if($(stepElement).is("."+key)){
+					handler.deactivate(stepElement);
+				}
+			});		
 		});
 	}	
 	this.activateAll = function(steps, stepNr){
