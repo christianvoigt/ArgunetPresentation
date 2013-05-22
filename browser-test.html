@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Philosophisches Argumentieren II: Pretzel Logic -- Drei
+	Arten der Selbstwiderlegung</title>
+<link rel="stylesheet" href="src/css/ArgunetPresentation.css"
+	type="text/css" />
+
+<link
+	href='http://fonts.googleapis.com/css?family=Vollkorn:400italic,700italic,400,700'
+	rel='stylesheet' type='text/css'>
+<link
+	href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,700,300italic,400italic,700italic'
+	rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+	<div class="argunet presentation">
+		<section>
+		<h1>Argunet Browser Test</h1>
+		</section>
+		<section>
+			<div class="argument-map" data-src="climate_engineering-20130423.graphml" data-node="67883"></div>
+			<span class="select-node" data-node="501839" data-step="1"></span>
+			<span class="graph-depth" data-depth="3" data-step="2"></span>
+		</section>
+	</div>
+
+	<script src="src/lib/jquery-1.9.1.js" type="text/javascript"></script>
+	<script src="src/lib/jquery.transit.min.js" type="text/javascript"></script>
+	<script src="src/ArgunetPresentation.js" type="text/javascript"></script>
+	<script src="src/StepController.js" type="text/javascript"></script>
+	<script src="src/ArgunetPresentationForPrint.js" type="text/javascript"></script>
+	<script src="src/ArgunetArgument.js" type="text/javascript"></script>
+	<script src="src/lib/ArgunetBrowser/ArgunetBrowser.load.min.js" type="text/javascript"></script>
+	<script src="src/ArgunetBrowserPlugin.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(function() {
+			new argunet.ArgunetPresentation({listeners: [new argunet.ArgunetBrowserPlugin()]});
+		});
+	</script>
+
+
+
+</body>
+</html>
