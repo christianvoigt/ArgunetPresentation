@@ -1,8 +1,7 @@
 //namespace:
 this.argunet = this.argunet||{};
 
-argunet.ArgunetPresentationForPrint = function(element){
-	var stepController = new argunet.StepController();
+argunet.ArgunetPresentationForPrint = function(stepController){
 	
 //presentation presentation
 var presentation = $(".argunet.presentation");

@@ -1,11 +1,15 @@
 //namespace:
 this.argunet = this.argunet||{};
 
-argunet.ArgunetPresentation = function(element){
+argunet.ArgunetPresentation = function(settings){
 
-	this.presentation = $(element).addClass("argunet presentation");
+	this.presentation = (settings && settings.element)? $(settings.element).addClass("argunet presentation") : $(".argunet.presentation").first();
+	
+	var listeners = (settings && settings.listeners)? settings.listeners : undefined;
+	this.stepController = new argunet.StepController(listeners);
+
 	if(window.location.hash == "#print"){ // print mode
-		new argunet.ArgunetPresentationForPrint();
+		new argunet.ArgunetPresentationForPrint(this.stepController);
 		return;
 	}	
 	$(this.presentation).find(".print-only").remove();
@@ -15,7 +19,6 @@ argunet.ArgunetPresentation = function(element){
 	this.currentStepNr = 0;
 	this.slides = $("section");
 	
-	this.stepController = new argunet.StepController();
 	
 	var i=1;
 	var menu = $("<div id='menu'><h3>Slides</h3><div class='content'></div></div>").appendTo(this.presentation);

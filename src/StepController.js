@@ -1,45 +1,59 @@
 //namespace:
 this.argunet = this.argunet||{};
 
-argunet.StepController = function(){
-	this.stepHandler = {};
+argunet.StepController = function(settings){
+	var that = this;
+	this.stepListeners = {};
 	
-	this.addStepHandler = function(handler){
-		this.stepHandler[handler.id] = handler;
+	this.addStepListener = function(listener){
+		if(listener.events && listener.activate && listener.deactivate){
+			$(listener.events).each(function(){
+				that.stepListeners[this] = that.stepListeners[this] || [];
+				that.stepListeners[this].push(listener);
+			});
+		}else{
+			throw "Object does not implement the step listener interface (listener.events, listener.activate(element), listener.deactivate(element)";
+		}
 	}
-	this.removeStepHandler = function(id){
-		delete this.stepHandler[id];
+	this.removeStepListener = function(listener){
+		$(listener.events).each(function(){
+			var listeners = this.stepListeners[this];
+			$(listeners).each(function(i, val){
+				if(listener === this) listeners.splice(i,1);
+			});
+		});
 	}
-	//default handlers
-	this.addStepHandler({
-		id : "add",
+	//default listeners
+	this.defaultHandlers = {
+	add: {
+		events : [".add"],
 		activate : function(el){
 			$(el).show();
 		},
 		deactivate : function(el){
 			$(el).hide();
 		}
-	});
-	this.addStepHandler({
-		id : "remove",
+	},
+	remove: {
+		events : [".remove"],
 		activate : function(el){
 			$(el).hide();
 		},
 		deactivate : function(el){
 			$(el).show();
 		}
-	});
-	this.addStepHandler({
-		id : "highlight",
+	},
+	highlight: {
+		events : [".highlight"],
 		activate : function(el){
 			$(el).addClass("active");
 		},
 		deactivate : function(el){
 			$(el).removeClass("active");
 		}		
-	});
-	this.addStepHandler({
-		id : "substitute",
+	},
+	substitute: {
+		events : [".substitute"],
 		activate : function(el){
 			$("#"+$(el).data("target")).hide();
 			$(el).show();
@@ -48,16 +62,39 @@ argunet.StepController = function(){
 			$("#"+$(el).data("target")).show();
 			$(el).hide();
 		}		
-	});
-	this.addStepHandler({
-		id : "comment",
+	},
+	comment: {
+		events : [".comment"],
 		activate : function(el){
 			$(el).show();
 		},
 		deactivate : function(el){
 			$(el).hide();
 		}		
-	});	
+	}
+	};	
+	
+	var stringSetting = false;
+	if(settings){
+		$(settings).each(function(){
+			if(jQuery.type(this) === "string"){ //default steps are explicitly set in settings
+				stringSetting = true;
+				var defaultHandler = that.defaultHandlers[this];
+				if(defaultHandler) that.addStepListener(defaultHandler);
+				else throw this+" is not the name of a default step listener";
+			}else{
+				that.addStepListener(this);
+			}
+		});
+	}
+	
+	if(!settings || settings.length == 0 || !stringSetting){ //if the default settings are not customized, activate them
+		settings = ["add", "remove", "highlight", "substitute", "comment"];		
+		$(settings).each(function(){
+				that.addStepListener(that.defaultHandlers[this]);
+		});
+	}
+	
 	
 	//get steps for slide
 	this.getSteps = function(slide, cloneComments){
@@ -92,9 +129,11 @@ argunet.StepController = function(){
 		var that = this;
 		$(s).each(function(){
 			var stepElement = this;
-			$.each(that.stepHandler,function(key,handler){
-				if($(stepElement).is("."+key)){
-					handler.activate(stepElement);
+			$.each(that.stepListeners,function(key,listeners){
+				if($(stepElement).is(key)){
+					$(listeners).each(function(){
+						this.activate(stepElement, key);
+					});
 				}
 			});		
 		});
@@ -104,9 +143,11 @@ argunet.StepController = function(){
 		var that = this;
 		$(s).each(function(){
 			var stepElement = this;
-			$.each(that.stepHandler,function(key,handler){
-				if($(stepElement).is("."+key)){
-					handler.deactivate(stepElement);
+			$.each(that.stepListeners,function(key,listeners){
+				if($(stepElement).is(key)){
+					$(listeners).each(function(){
+						this.deactivate(stepElement, key);
+					});
 				}
 			});		
 		});

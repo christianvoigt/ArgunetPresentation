@@ -16,7 +16,7 @@
 
 </head>
 <body>
-	<div id="presentation">
+	<div class="argunet presentation">
 		<section class="title full-width">
 			<p class="series">Philosophisches Argumentieren II -
 				Sommersemester 2013</p>
@@ -745,7 +745,7 @@
 						diese Person</i> auch wirklich der Fall.</li>
 				<li>Ich fälle das Urteil, dass ¬PR wahr ist.</li>
 				<li><em>Schlussprinzip:</em> Allspezialisierung, Modus Ponens</li>
-				<li class="conclusion">¬PR: <em>Für mich</em> ist PR falsch.
+				<li class="conclusion"><em>Für mich</em> ist PR falsch.
 					(hängt ab von 1)
 				</li>
 			</ol>
@@ -975,9 +975,11 @@
 	<script src="src/StepController.js" type="text/javascript"></script>
 	<script src="src/ArgunetPresentationForPrint.js" type="text/javascript"></script>
 	<script src="src/ArgunetArgument.js" type="text/javascript"></script>
+	<script src="src/lib/ArgunetBrowser/ArgunetBrowser.load.min.js" type="text/javascript"></script>
+	<script src="src/ArgunetBrowserPresentationPlugin.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		$(function() {
-			new argunet.ArgunetPresentation($("#presentation"));
+			new argunet.ArgunetPresentation({listeners: [new argunet.ArgunetBrowserPresentationPlugin()]});
 		});
 	</script>
 
