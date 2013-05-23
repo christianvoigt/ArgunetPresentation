@@ -15,7 +15,7 @@ argunet.ArgunetBrowserPlugin = function(){
 		var browserId = i+1;
 		$(this).data("browser-id", browserId);
 		var height = $(this).css("height");
-		var debateUrl = $(this).data("src");
+		var data = $(this).data("src");
 		var firstNode = $(this).data("node");
 		
 		that.browsers.push({steps:[this]});
@@ -29,7 +29,7 @@ argunet.ArgunetBrowserPlugin = function(){
 		});
 
 		that.browsersLoaded = 0;
-		that.argunetLoader("createArgunetBrowser",{htmlElement: this, debateUrl:debateUrl,firstNode:firstNode,cssUrl:"src/lib/ArgunetBrowser/ArgunetBrowser.min.css", height:height}).then(function(argunetBrowser){
+		that.argunetLoader("createArgunetBrowser",{container: this, data:data,firstNode:firstNode,cssUrl:"src/lib/ArgunetBrowser/ArgunetBrowser.min.css", height:height}).then(function(argunetBrowser){
 			that.browsers[that.browsersLoaded].browser = argunetBrowser;
 			
 			//activate steps if there already is an active step
