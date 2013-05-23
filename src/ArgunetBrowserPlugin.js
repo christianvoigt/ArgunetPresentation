@@ -14,7 +14,7 @@ argunet.ArgunetBrowserPlugin = function(){
 		
 		var browserId = i+1;
 		$(this).data("browser-id", browserId);
-		var height = $(this).innerHeight();
+		var height = $(this).css("height");
 		var debateUrl = $(this).data("src");
 		var firstNode = $(this).data("node");
 		

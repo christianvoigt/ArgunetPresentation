@@ -68,6 +68,9 @@ section.full-width{
 	width:94%;
 		max-width:40em;
 }
+section.no-padding{
+	padding:0px;
+}
 section img{
     max-width: 100%;
     height: auto;
