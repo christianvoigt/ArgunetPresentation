@@ -20,49 +20,86 @@
 		<section>
 		<h1>Argunet Browser Test</h1>
 		</section>
-		<section class="no-padding">
-			<div class="argument-map" data-src="climate_engineering-20130423.graphml" data-node="67883" style="height:100%;"></div>
-			<span class="select-node" data-node="501839" data-step="1"></span>
-			<span class="graph-depth" data-depth="3" data-step="2"></span>
+		<section>
+		<h3>Die Präsentation von Argumentlandkarten</h3>
+		<ul>
+		<li class="add" data-step="1">Nicht-lineare Strukturen überfordern viele Menschen</li>
+		<li class="add" data-step="2">Sie brauchen einen linearen Pfad auf dem sie diese Strukturen erkunden können</li>
+		<li class="add" data-step="3">Deswegen ist es häufig sinnvoll, Argumentlandkarten in eine herkömmliche Präsentation zu integrieren</li>
+		</ul>
 		</section>
 		<section class="no-padding">
-			<div class="argument-map" data-node="thesis3" style="height:100%;">
-				<div class="argument" id="arg1">
-				<h4>Argument Titel</h4>
-				<p>Argument Description</p>
-				</div>		
+			<div class="argument-map" data-src="climate_engineering-20130423.graphml" data-node="67883" style="height:100%;"></div>
+			<div class="comment" data-step="1">Argunet Presentation ermöglicht es, Argumentlandkarten in eine Präsentation einzubetten, ohne eine einzige Zeile Javascript zu schreiben. Stattdessen reicht es aus ein Html-Element mit der Klasse "argument-map" und einigen wenigen zusätzlichen Attributen einzufügen.</div>
+			<div class="comment" data-step="2">Argunet Presentation übergibt dann die entsprechenden Daten an einen Argunet Browser, der an der entsprechenden Stelle in der Präsentation eingefügt wird.</div>
+			<div class="comment" data-step="3">Dies funktioniert, auch wenn das entsprechende Slide zunächst nicht sichtbar ist. Argunet Browser wird in diesem Fall erst initialisiert, wenn das entsprechende Slide sichtbar wird.</div>
+		</section>
+		<section class="no-padding">
+			<div class="argument-map" data-src="climate_engineering-20130423.graphml" data-node="67883" style="height:100%;"></div>
+			<div class="comment" data-step="1">Die Argumentlandkarte kann nun schrittweise vorgestellt werden, in dem nacheinander unterschiedliche Argumente selektiert und kommentiert werden.</div>
+			<span class="select-node" data-node="501839" data-step="2"></span>
+			<div class="comment" data-step="3">Auch dafür sind keine Javascript-Kenntnisse notwendig. Es reicht, einem Html-Element die Klasse "select-node" und einige wenige Zusatzattribute zu geben.</div>
+			<div class="comment" data-step="4">Die Veränderung der "Graphentiefe" ist ebenfalls möglich.</div>
+			<span class="graph-depth" data-depth="3" data-step="5"></span>
+			<span class="no-comment" data-step="6"></span>
+			<span class="select-node" data-node="356672" data-step="6"></span>
+			<span class="select-node" data-node="413738" data-step="7"></span>
+			<span class="select-node" data-node="354066" data-step="8"></span>
+			
+		</section>
+		<section class="full-width">
+		<p>Aber das ist nicht alles. Häufig will man nur eine relativ einfache Argumentationsstruktur präsentieren. Dafür ist es dann meist recht umständlich, zunächst eine Argumentlandkarte in Argunet Editor zu erstellen, zu exportieren und einzubinden.</p>
+		<p class="add" data-step="1">Es gibt eine einfache Alternative: Die Argumentlandkarte kann direkt als Html eingegeben werden und wird vom Argunet Browser automatisch erkannt und eingelesen.</p>
+		<p class="add" data-step="2">Der Code für eine einfache Argumentlandkarte sieht einfach folgendermaßen aus:</p>
+		<pre class="add" data-step="3">
+&lt;div class=&quot;argument-map&quot; data-node=&quot;thesis3&quot; style=&quot;height:100%;&quot;&gt;<br/>	&lt;div class=&quot;argument&quot; id=&quot;arg1&quot;&gt;<br/>	&lt;h4&gt;Argument Titel&lt;/h4&gt;<br/>	&lt;p&gt;Argument Description&lt;/p&gt;<br/>	&lt;/div&gt;		<br/><br/>	&lt;div class=&quot;argument&quot; id=&quot;arg2&quot;&gt;<br/>	&lt;h4&gt;Argument 2&lt;/h4&gt;<br/>	&lt;p&gt; Description&lt;/p&gt;<br/>	&lt;/div&gt;	<br/>	<br/>	&lt;div class=&quot;argument&quot; id=&quot;arg3&quot;&gt;<br/>	&lt;h4&gt;Argument 3&lt;/h4&gt;<br/>	&lt;p&gt; Description&lt;/p&gt;<br/>	&lt;/div&gt;					<br/>	<br/>	&lt;div class=&quot;thesis&quot; id=&quot;thesis1&quot;&gt;<br/>		&lt;h4&gt;These Titel&lt;/h4&gt;<br/>		&lt;p&gt;These Satz&lt;/p&gt;<br/>	&lt;/div&gt;	<br/><br/>	&lt;div class=&quot;thesis&quot; id=&quot;thesis2&quot;&gt;<br/>		&lt;h4&gt;These Titel&lt;/h4&gt;<br/>		&lt;p&gt;These Satz&lt;/p&gt;<br/>	&lt;/div&gt;	<br/>	<br/>	&lt;div class=&quot;thesis&quot; id=&quot;thesis3&quot; data-color=&quot;1&quot;&gt;<br/>		&lt;h4&gt;These Titel&lt;/h4&gt;<br/>		&lt;p&gt;These Satz&lt;/p&gt;<br/>	&lt;/div&gt;	<br/>					<br/>	&lt;div class=&quot;support&quot; data-from=&quot;thesis1&quot; data-to=&quot;arg2&quot;&gt;&lt;/div&gt;<br/>	&lt;div class=&quot;attack&quot; data-from=&quot;arg1&quot; data-to=&quot;thesis3&quot;&gt;&lt;/div&gt;<br/>	&lt;div class=&quot;attack&quot; data-from=&quot;arg2&quot; data-to=&quot;thesis3&quot;&gt;&lt;/div&gt;<br/>	&lt;div class=&quot;attack&quot; data-from=&quot;arg3&quot; data-to=&quot;thesis2&quot;&gt;&lt;/div&gt;<br/>	&lt;div class=&quot;support&quot; data-from=&quot;thesis2&quot; data-to=&quot;arg1&quot;&gt;&lt;/div&gt;<br/>	&lt;div class=&quot;support&quot; data-from=&quot;thesis1&quot; data-to=&quot;arg3&quot;&gt;&lt;/div&gt;<br/>		<br/>&lt;/div&gt;		
+		</pre>
+		<p class="comment" data-step="4">Eingelesen vom Argunet Browser wird daraus folgende Argumentlandkarte:</p>
+		</section>
+		<section class="no-padding">
+<div class="argument-map" data-node="thesis3" style="height:100%;">
+	<div class="argument" id="arg1">
+	<h4>Argument Titel</h4>
+	<p>Argument Description</p>
+	</div>		
 
-				<div class="argument" id="arg2">
-				<h4>Argument 2</h4>
-				<p> Description</p>
-				</div>	
-				
-				<div class="argument" id="arg3">
-				<h4>Argument 3</h4>
-				<p> Description</p>
-				</div>					
-				
-				<div class="thesis" id="thesis1">
-					<h4>These Titel</h4>
-					<p>These Satz</p>
-				</div>	
+	<div class="argument" id="arg2">
+	<h4>Argument 2</h4>
+	<p> Description</p>
+	</div>	
+	
+	<div class="argument" id="arg3">
+	<h4>Argument 3</h4>
+	<p> Description</p>
+	</div>					
+	
+	<div class="thesis" id="thesis1">
+		<h4>These Titel</h4>
+		<p>These Satz</p>
+	</div>	
 
-				<div class="thesis" id="thesis2">
-					<h4>These Titel</h4>
-					<p>These Satz</p>
-				</div>	
-				
-				<div class="thesis" id="thesis3" data-color="1">
-					<h4>These Titel</h4>
-					<p>These Satz</p>
-				</div>	
-								
-				<div class="support" data-from="arg1" data-to="thesis1"></div>
-				<div class="attack" data-from="arg1" data-to="thesis3"></div>
-				<div class="attack" data-from="arg2" data-to="thesis3"></div>
-				<div class="attack" data-from="arg3" data-to="thesis3"></div>
+	<div class="thesis" id="thesis2">
+		<h4>These Titel</h4>
+		<p>These Satz</p>
+	</div>	
+	
+	<div class="thesis" id="thesis3" data-color="1">
+		<h4>These Titel</h4>
+		<p>These Satz</p>
+	</div>	
 					
-			</div>
+	<div class="support" data-from="thesis1" data-to="arg2"></div>
+	<div class="attack" data-from="arg1" data-to="thesis3"></div>
+	<div class="attack" data-from="arg2" data-to="thesis3"></div>
+	<div class="attack" data-from="arg3" data-to="thesis2"></div>
+	<div class="support" data-from="thesis2" data-to="arg1"></div>
+	<div class="support" data-from="thesis1" data-to="arg3"></div>
+		
+</div>
+			<span class="graph-depth" data-depth="2" data-step="1"></span>
+			<span class="select-node" data-node="thesis2" data-step="2"></span>
+			<span class="graph-depth" data-depth="3" data-step="3"></span>
+			<span class="select-node" data-node="thesis1" data-step="4"></span>
 		</section>
 	</div>
 

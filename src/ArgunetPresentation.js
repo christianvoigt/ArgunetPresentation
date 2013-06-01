@@ -20,10 +20,33 @@ argunet.ArgunetPresentation = function(settings){
 	this.slides = $("section");
 	
 	
-	var i=1;
 	var menu = $("<div id='menu'><h3>Slides</h3><div class='content'></div></div>").appendTo(this.presentation);
-	var navigation = $("<nav id='navigation'><a href='' class='back'><span>Back</span></a> <div class='info'></div> <a href='' class='forward'><span>Forward</span></a> <a href='#print' target='_blank'><img src='src/css/images/printer.png' style='height:1em;' /></a> <a class='logo' href='http://www.argunet.org'><img src='src/css/images/argunet-logo.png' style='width:5em'/></a></nav>").appendTo(this.presentation);
-	
+	var navigation = $("<nav id='navigation'><a href='#' class='open'><img src='src/css/images/menu.png' style='height:1em;' /></a><div class='content'><a href='' class='back'><span>Back</span></a> <div class='info'></div> <a href='' class='forward'><span>Forward</span></a> <a href='#print' target='_blank'><img src='src/css/images/printer.png' style='height:1em;' /></a></div></nav> <a class='logo' href='http://www.argunet.org'><img src='src/css/images/argunet-logo.png' style='width:5em'/></a>").appendTo(this.presentation);
+
+	//navigation for touch screens
+	$("#navigation .back").click(function(){
+		that.previous();
+		return false;
+	});
+	$("#navigation .forward").click(function(){
+		that.next();
+		return false;
+	});
+	//nav button
+	$(menu).hide();
+	$(navigation).children(".content").hide();
+	var cont = $(navigation).children(".content");
+	$(cont).css("marginRight",-$(cont).outerWidth());
+	$(navigation).children(".open").click(function(){
+		if(cont.is(":hidden")){
+			cont.css('marginRight',-cont.outerWidth());
+			cont.show().animate({marginRight: 0});
+		}else{
+			cont.show().animate({marginRight: -cont.outerWidth()},{complete:function(){cont.hide();}});
+		}
+		$(menu).toggle();
+		return false;
+	});
 	//menu
 	menu.click(function(){
 		if($(this).is(".active"))$(this).transition({x:"0px"}).removeClass("active");
@@ -33,6 +56,8 @@ argunet.ArgunetPresentation = function(settings){
 		}
 	});
 	//slide list
+	var i=1;
+
 	$(this.slides).each(function(i){
 		$(this).attr("data-slide",(i+1));
 		var h1 = $(this).find("h1").get(0);
@@ -129,7 +154,7 @@ argunet.ArgunetPresentation = function(settings){
 		//scroll to step (if it is not a comment, because comments are not displayed within the scrollable section)
 		if(stepNr>0 && !comingFromNextSlide){
 			var s = this.steps[stepNr-1];
-			if(s && !$(s).is(".comment")){
+			if(s && !$(s).is(".comment") && $(s).offset()){
 			     $(this.slides[this.currentSlideNr-1]).animate({
 			         scrollTop: $(s).offset().top+"px"
 			     }, 200);			
@@ -216,13 +241,5 @@ argunet.ArgunetPresentation = function(settings){
 			return false;
 		}
 	});	
-	//navigation for touch screens
-	$("#navigation .back").click(function(){
-		that.previous();
-		return false;
-	});
-	$("#navigation .forward").click(function(){
-		that.next();
-		return false;
-	});
+
 };

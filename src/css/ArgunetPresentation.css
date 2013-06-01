@@ -9,13 +9,15 @@ body{
 }
 
 .argument{
+	margin-top:1.5em;
 	margin-bottom:4em;
+	font-size:0.9em;
 }
 .argument .conclusion{
 	font-weight:bold;
-	margin-top:1.5em;
-	padding-top:0.7em;
-	margin-bottom:0.5em;
+	margin-top:1.4em;
+	padding-top:0.5em;
+	margin-bottom:0.3em;
 	border-top:2px solid black;
 	position:relative;
 }
@@ -42,7 +44,7 @@ body{
 	line-height:1.2em;
 }
 .argunet.presentation{
-	font-size:1.5em;
+	font-size:1.7em;
 	line-height:1.5em;
 	font-family:Vollkorn, serif;
 	position:absolute;
@@ -56,8 +58,8 @@ body{
 section{
 	display:none;
 	position:absolute;
-    width: 67%;
-    height:99%;
+    width: 69%;
+    height:100%;
 	overflow-y: auto;
     overflow-x: hidden;	
 	box-shadow: 0px 4px 7px rgba(0,0,0,0.6);
@@ -65,8 +67,7 @@ section{
     background-color: #fff;
 }
 section.full-width{
-	width:94%;
-		max-width:40em;
+	width:99%;
 }
 section.no-padding{
 	padding:0px;
@@ -106,6 +107,12 @@ h4{
 	font-family:Ubuntu, sans-serif;
 	margin:0 0 0.5em;
 }
+dt{
+	font-weight:bold;
+}
+dd{
+	margin-bottom:1em;
+}
 .title{
 	text-align:center;
 }
@@ -118,7 +125,8 @@ h4{
 	margin-bottom:0.4em;
 }
 .title h2{
-	margin-top:-0.4em;
+	font-size:1.2em;
+	margin-top:-0.2em;
 	margin-bottom:0.8em;
 	font-weight:normal;
 }
@@ -144,12 +152,11 @@ section header{
 }
 .comments{
 	position:fixed;
-	top:10px;
-	bottom:2em;
-	bottom:3em;
-	overflow:scroll;
-	left:69%;
-	width:26%;	
+	top:0px;
+	padding-right:1em;
+	bottom:2.5em;
+	overflow-y:auto;
+	left:71%;
 }
 
 /*step types*/
@@ -157,6 +164,7 @@ section header{
 	display:none;	
 	padding:1em;
 	font-family:Ubuntu, sans-serif;
+	font-size:0.9em;
 	color:#5289BA;
 	border:2px solid #5289BA;
 	background-color:#eee;
@@ -180,9 +188,9 @@ section header{
 #navigation{
 	position:fixed;
 	bottom:0;
-	right:0px;
+	right:5.4em;
+	padding:0.1em 0.7em 0 0.4em;
 	height:2em;
-	width:15em;
 	overflow:hidden;
 	color:#fff;
 	font-family:Ubuntu, sans-serif;
@@ -197,6 +205,10 @@ background-color:#ccc;
 border-top-left-radius: 10px;
 border-top-right-radius: 10px;
 	
+}
+#navigation .content{
+	display:inline-block;
+	padding-left:0.5em;
 }
 #navigation a{
 	color:#fff;
@@ -232,13 +244,16 @@ vertical-align:middle;
 #navigation .forward span, #navigation .back span{
 	display:none;
 }
-#navigation .logo{
-display:inline-block;
-padding-top:3px;
-margin-left:1em;
-vertical-align:middle;
+.logo{
+	position:fixed;
+	bottom:0;
+	right:0px;
+	height:2em;
+background-color:#ccc;
+width:5.4em;
+padding:0.2em;
 }
-#navigation .logo img{
+.logo img{
 	display:inline-block;
 	vertical-align:middle;
 }
@@ -280,7 +295,7 @@ color:#ccc;
 transform: rotate(90deg);
 }
 #menu .content{
-overflow:scroll;
+overflow-y:auto;
 position:absolute;
 top:10px;
 bottom:10px;
