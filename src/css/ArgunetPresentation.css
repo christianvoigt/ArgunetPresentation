@@ -7,8 +7,8 @@ body{
 	margin:0px;
 	padding:0px;
 }
-
 .argument{
+	font-family:Ubuntu, sans-serif;
 	margin-top:1.5em;
 	margin-bottom:4em;
 	font-size:0.9em;
@@ -44,7 +44,7 @@ body{
 	line-height:1.2em;
 }
 .argunet.presentation{
-	font-size:1.7em;
+	font-size:1.9em;
 	line-height:1.5em;
 	font-family:Vollkorn, serif;
 	position:absolute;
@@ -67,7 +67,7 @@ section{
     background-color: #fff;
 }
 section.full-width{
-	width:99%;
+	width:100%;
 }
 section.no-padding{
 	padding:0px;
@@ -87,8 +87,8 @@ blockquote .source{
 	line-height:1.2em;
 }
 .thesis.big{
-	font-size:2em;
-	border:0.1em solid black;
+	font-size:1.5em;
+	border:0.2em solid black;
 	font-weight:bold;
 	padding:0.5em;
 	font-family:Ubuntu, sans-serif;
@@ -147,16 +147,14 @@ section header{
 	margin-bottom:2em;
 }
 
-.argument{
-	font-family:Ubuntu, sans-serif;
-}
+
 .comments{
 	position:fixed;
-	top:0px;
-	padding-right:1em;
+	top:10px;
+	padding-right:0.5em;
 	bottom:2.5em;
 	overflow-y:auto;
-	left:71%;
+	left:70.5%;
 }
 
 /*step types*/
@@ -164,13 +162,14 @@ section header{
 	display:none;	
 	padding:1em;
 	font-family:Ubuntu, sans-serif;
-	font-size:0.9em;
+	font-size:0.8em;
 	color:#5289BA;
 	border:2px solid #5289BA;
 	background-color:#eee;
 	-webkit-border-radius: 15px;
 	-moz-border-radius: 15px;
 	border-radius: 15px;	
+	margin:0px;
 }
 
 .highlight.active{
@@ -188,27 +187,25 @@ section header{
 #navigation{
 	position:fixed;
 	bottom:0;
-	right:5.4em;
-	padding:0.1em 0.7em 0 0.4em;
+	right:5.5em;
+	padding:0.1em 0.3em 0 0.4em;
 	height:2em;
 	overflow:hidden;
 	color:#fff;
 	font-family:Ubuntu, sans-serif;
-	font-size:1em;
+	font-size:0.8em;
 	font-weight:300;
 	text-align:center;
 background-color:#ccc;
 -webkit-border-top-left-radius: 10px;
--webkit-border-top-right-radius: 10px;
--moz-border-radius-topleft: 10px;
 -moz-border-radius-topright: 10px;
 border-top-left-radius: 10px;
-border-top-right-radius: 10px;
-	
+	opacity:0.7;
+
 }
 #navigation .content{
 	display:inline-block;
-	padding-left:0.5em;
+	padding:0 0.7em 0 0.3em;
 }
 #navigation a{
 	color:#fff;
@@ -245,13 +242,16 @@ vertical-align:middle;
 	display:none;
 }
 .logo{
+	font-size:0.8em;
 	position:fixed;
 	bottom:0;
 	right:0px;
 	height:2em;
 background-color:#ccc;
-width:5.4em;
-padding:0.2em;
+	opacity:0.7;
+
+width:5.5em;
+padding:0.2em 0.3em 0.2em 0.2em;
 }
 .logo img{
 	display:inline-block;
@@ -259,7 +259,7 @@ padding:0.2em;
 }
 #menu{
 position: absolute;
-top: 0px;
+top: 10px;
 bottom:4em;
 right:-12em;
 width: 15em;
@@ -282,7 +282,7 @@ font-family:Ubuntu, sans-serif;
   margin-right: -0.25em; /* Adjusts for spacing */
 }
 #menu h3{
-font-size:1.2em;
+font-size:1.1em;
 margin:0px;
 padding:0px;
 font-weight:bold;
@@ -311,7 +311,7 @@ width:11em;
 	margin:1em;
 	padding:0.5em;
 	box-shadow: 0px 4px 7px rgba(0,0,0,0.2);
-	font-size:0.9em;
+	font-size:0.8em;
 	line-height:1.2em;
 	overflow:hidden;
 }
@@ -333,7 +333,8 @@ width:11em;
 	width:100%;
 	display:block;
 	border:0;
-	font-family:Garamond, serif;
+		font-family:Vollkorn, serif;
+	
 }
 
 .argunet.print section{
@@ -373,8 +374,15 @@ width:11em;
 .argunet.presentation{
 	font-size:1em;	
 	}
-	#navigation .logo{
-		display:none;
+	#navigation{
+		font-size:1.5em;
+		padding-top:0.4em;
+	}
+	.logo{
+		font-size:1.5em;
+	}
+	#menu{
+		font-size:1.2em;
 	}
 }
 @page  

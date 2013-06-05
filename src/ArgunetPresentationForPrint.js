@@ -41,6 +41,7 @@ $(presentation).children("section").each(function(slideIndex, el){
 		delete this.dataset.step;
 	});
 	stepController.activateStep([printSteps], 1);		
+	$(printSteps).filter(".comment").show();
 	
 	//update steps 
 	steps = stepController.getSteps(slide, false);
@@ -67,8 +68,8 @@ $(presentation).children("section").each(function(slideIndex, el){
 		//deactivate all steps
 		stepController.deactivateAll(clonedSteps);
 		//activate alls steps up to the current one
-		stepController.activateAll(clonedSteps, i+1)
+		stepController.activateAll(clonedSteps, i+1);
 	});
 });
-window.print();
+setTimeout(function(){window.print()}, 2000);
 };

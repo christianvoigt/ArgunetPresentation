@@ -7,6 +7,8 @@ argunet.ArgunetPresentation = function(settings){
 	
 	var listeners = (settings && settings.listeners)? settings.listeners : undefined;
 	this.stepController = new argunet.StepController(listeners);
+	var transition = (settings && settings.transition)? settings.transition : "right";
+	this.transitionController = new argunet.TransitionController(transition);
 
 	if(window.location.hash == "#print"){ // print mode
 		new argunet.ArgunetPresentationForPrint(this.stepController);
@@ -59,6 +61,10 @@ argunet.ArgunetPresentation = function(settings){
 	var i=1;
 
 	$(this.slides).each(function(i){
+		//if this slide contains no comments, make it full-width
+		if($(this).find(".comment").length == 0) $(this).addClass("full-width");
+		
+		
 		$(this).attr("data-slide",(i+1));
 		var h1 = $(this).find("h1").get(0);
 		var h2 = $(this).find("h2").get(0);
@@ -115,22 +121,12 @@ argunet.ArgunetPresentation = function(settings){
 
 		this.setHash(slideNr, stepNr);
 		
-		//reset transforms
-		currentSlide.css("transform","none");
-		currentSlide.css("top","0px");
-		activatedSlide.css("transform","none");
-		var height = 30+this.presentation.innerHeight();
 		
-		
-		//Animation & Reset
-		if(this.currentSlideNr < slideNr){ //slide from bottom up
-			currentSlide.transition({y:(-height)+"px"},1000,"linear",function(){this.hide();});
-			activatedSlide.css("top",(height) +"px");
-			activatedSlide.show().transition({y:-height+"px"},1000,"linear");
-		}else{ //slide from top down
-			currentSlide.transition({y:(height)+"px"},1000,"linear",function(){this.hide();});
-			activatedSlide.css("top",(-height) +"px");
-			activatedSlide.show().transition({y:height+"px"},1000,"linear");
+		//Animation
+		if(this.currentSlideNr < slideNr){ 
+			this.transitionController.next(currentSlide, activatedSlide);
+		}else{ 
+			this.transitionController.previous(currentSlide, activatedSlide);
 		}
 		this.currentSlideNr = slideNr;
 
