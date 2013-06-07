@@ -39,10 +39,12 @@ argunet.StepController = function(settings){
 				init : function(){
 					$(".add-from-here-on").each(function(){
 						$(this).addClass("add");
-						$(this).nextAll().addClass("add");
+						$(this).nextAll(":not(ul,ol,dl)").addClass("add");
+						$(this).nextAll("ul,ol,dl").children("li,dt,dd").addClass("add");
 					});
 					$(".add-all").each(function(){
-						$(this).children().addClass("add");
+						$(this).children(":not(ul,ol,dl)").addClass("add");
+						$(this).children("ul,ol,dl").children("li,dt,dd").addClass("add");
 					});
 
 				}
